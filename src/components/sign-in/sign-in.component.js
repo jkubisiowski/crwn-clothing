@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import FormInput from '../form-input/form-input.component';
+import './sign-in.styles.scss';
 
 export class SignIn extends Component {
   state = {
@@ -22,22 +24,22 @@ export class SignIn extends Component {
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
         <form onSubmit={event => this.handleSubmit(event)}>
-          <input
+          <FormInput
             type="email"
             name="email"
             value={this.state.email}
             required
-            onChange={event => this.handleChange(event)}
+            label="email"
+            handleChange={event => this.handleChange(event)}
           />
-          <label>Email</label>
-          <input
+          <FormInput
             type="password"
             name="password"
             value={this.state.password}
             required
-            onChange={event => this.handleChange(event)}
+            label="password"
+            handleChange={event => this.handleChange(event)}
           />
-          <label>Password</label>
           <input type="submit" value="Submit form" />
         </form>
       </div>
