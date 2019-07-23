@@ -26,7 +26,7 @@ class App extends React.Component {
           });
         });
       }
-      this.setState({ currentUser: null });
+      this.setState({ currentUser: userAuth });
     });
   }
 
